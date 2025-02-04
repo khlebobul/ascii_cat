@@ -14,4 +14,14 @@ You cat find this cat [here](https://emojicombos.com/cat).
  じしˍ,)ノ
 ```
 
+Dart version
+
+```dart
+Text(
+    isTailMoving
+    ? ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍ,)ノ'
+    : ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍ,)︵',
+),
+```
+
 You can also experiment with cats from [here](https://2ch-aa.blogspot.com/2018/06/625.html).
