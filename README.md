@@ -2,7 +2,7 @@
 
 Cute ASCII cat app 🐈‍⬛
 
-// Add demo
+https://github.com/user-attachments/assets/90acb900-f298-45e9-adb9-93281506fc79
 
 Sound on 🎵
 
