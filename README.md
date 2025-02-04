@@ -11,17 +11,19 @@ You cat find this cat [here](https://emojicombos.com/cat).
  ╱|、
 (˚ˎ 。7
  l、˜〵
- じしˍ,)ノ
+ じしˍˍ)ノ
 ```
 
 Dart version
 
 ```dart
 Text(
-    isTailMoving
-    ? ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍ,)ノ'
-    : ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍ,)︵',
+  isTailMoving
+      ? ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍˍ)ノ'
+      : ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍˍ)︵',
+  style: TextStyle(fontSize: 30, fontFamily: 'Fira Code'),
 ),
 ```
+In order for the characters to be of the same style, I chose the [Fira Code font](https://fonts.google.com/specimen/Fira+Code).
 
 You can also experiment with cats from [here](https://2ch-aa.blogspot.com/2018/06/625.html).

@@ -26,5 +26,9 @@ dev_dependencies:
   riverpod_lint: ^2.6.4
 
 flutter:
-
   uses-material-design: true
+
+  fonts:
+    - family: Fira Code
+      fonts:
+        - asset: assets/FiraCode-Regular.ttf

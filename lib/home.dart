@@ -40,9 +40,12 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
           children: <Widget>[
             Text(
               isTailMoving
-                  ? ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍ,)ノ'
-                  : ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍ,)︵',
-              style: TextStyle(fontSize: 30),
+                  ? ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍˍ)ノ'
+                  : ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍˍ)︵',
+              style: TextStyle(
+                fontSize: 30,
+                fontFamily: 'Fira Code',
+              ),
             ),
           ],
         ),
