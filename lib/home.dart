@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
+import 'package:audioplayers/audioplayers.dart';
 
 final tailMovementProvider = StateProvider<bool>((ref) => false);
 
@@ -13,6 +14,7 @@ class MyHomePage extends ConsumerStatefulWidget {
 
 class MyHomePageState extends ConsumerState<MyHomePage> {
   late Timer _timer;
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
   @override
   void initState() {
@@ -26,6 +28,7 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
   @override
   void dispose() {
     _timer.cancel();
+    _audioPlayer.dispose();
     super.dispose();
   }
 
@@ -34,20 +37,29 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
     final isTailMoving = ref.watch(tailMovementProvider);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              isTailMoving
-                  ? ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍˍ)ノ'
-                  : ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍˍ)︵',
-              style: TextStyle(
-                fontSize: 30,
-                fontFamily: 'Fira Code',
+        child: GestureDetector(
+          onLongPress: () async {
+            await _audioPlayer.play(AssetSource('sounds/purr.mp3'));
+            Timer(const Duration(seconds: 5), () {
+              _audioPlayer.stop();
+            });
+          },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                isTailMoving
+                    ? ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍˍ)ノ'
+                    : ' ╱|、\n(˚ˎ 。7\n l、˜〵\n じしˍˍ)︵',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontFamily: 'Fira Code',
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
